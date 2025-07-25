@@ -1,0 +1,35 @@
+{
+  "name": "nodejs-hw-01",
+  "version": "1.0.0",
+  "description": "nodejs-hw-01",
+  "types": "module",
+  "main": "index.js",
+  "scripts": {
+    "get-all": "/src/scripts/getAllContacts.js",
+    "generate": "/src/scripts/generateContacts.js",
+    "add-one": "/src/scripts/addOneContact.js",
+    "count": "/src/scripts/countContacts.js",
+    "remove-all": "/src/scripts/removeAllContacts.js",
+    "remove-last": "/src/scripts/removeLastContact.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dmytro15082014/nodejs-hw-01.git"
+  },
+  "keywords": [],
+  "author": "Dima Terentev <leo20091986@gmail.com>",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Dmytro15082014/nodejs-hw-01/issues"
+  },
+  "homepage": "https://github.com/Dmytro15082014/nodejs-hw-01#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "eslint": "^9.31.0",
+    "globals": "^16.3.0",
+    "nodemon": "^3.1.10"
+  }
+}
