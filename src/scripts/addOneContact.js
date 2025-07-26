@@ -1,15 +1,14 @@
-import fs from 'node:fs/promises';
-import PATH_DB from '../constants/contacts.js';
 import { createFakeContact } from '../utils/createFakeContact.js';
+import { readContacts } from '../utils/readContacts.js';
+import { writeContacts } from '../utils/writeContacts.js';
 
 const addOneContact = async () => {
-  const data = JSON.parse(await fs.readFile(PATH_DB, 'utf-8'));
-  data.push(createFakeContact());
-  try {
-    await fs.writeFile(PATH_DB, JSON.stringify(data), 'utf-8');
-  } catch (err) {
-    console.log(err.message);
-    throw err;
+  const data = await readContacts();
+  if (Array.isArray(data)) {
+    data.push(createFakeContact());
+    await writeContacts(data);
+  } else {
+    return console.log('Wrong type data in DB');
   }
 };
 

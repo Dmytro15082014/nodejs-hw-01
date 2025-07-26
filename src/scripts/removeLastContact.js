@@ -1,15 +1,11 @@
-import fs from 'node:fs/promises';
-import PATH_DB from '../constants/contacts.js';
+import { readContacts } from '../utils/readContacts.js';
+import { writeContacts } from '../utils/writeContacts.js';
 
 export const removeLastContact = async () => {
-  try {
-    const db = JSON.parse(await fs.readFile(PATH_DB, 'utf-8'));
-    const data = db.slice(0, db.length - 1);
-    await fs.writeFile(PATH_DB, JSON.stringify(data), 'utf-8');
-  } catch (err) {
-    console.log(err.message);
-    throw err;
-  }
+  const db = await readContacts();
+  if (db.length === 0) return console.log('Data not found on DB');
+  const data = db.slice(0, db.length - 1);
+  await writeContacts(data);
 };
 
 removeLastContact();
