@@ -5,12 +5,12 @@
   "types": "module",
   "main": "index.js",
   "scripts": {
-    "get-all": "/src/scripts/getAllContacts.js",
-    "generate": "/src/scripts/generateContacts.js",
-    "add-one": "/src/scripts/addOneContact.js",
-    "count": "/src/scripts/countContacts.js",
-    "remove-all": "/src/scripts/removeAllContacts.js",
-    "remove-last": "/src/scripts/removeLastContact.js",
+    "get-all": "node src/scripts/getAllContacts.js",
+    "generate": "node src/scripts/generateContacts.js",
+    "add-one": "node src/scripts/addOneContact.js",
+    "count": "node src/scripts/countContacts.js",
+    "remove-all": "node src/scripts/removeAllContacts.js",
+    "remove-last": "node src/scripts/removeLastContact.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js"
   },
